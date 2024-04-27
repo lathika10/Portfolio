@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+<div id="header">
+<div class="container">
+  <nav>
+    <img src="profile-high-resolution-logo-transparent.png" class="logo">
+    <ul>
+      <li><a href="#header">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="head-text">
+    <h1 style="font-size: 80px;">Hi, I'm <span>Lathika</span></h1><br>
+    <p style="color: gray;">Skilled Computer Science & Business System student at SKCET.<br> Adept team player, excels in problem-solving.<br>Harnessing tech and business acumen for success.</p>
+  </div>
+</div>
+</div>
+<div id="about" style="background-color: black;">
+  <div class="container">
+    <div class="row">
+    <div class="about-col-1">
+      <img src="a.jpg">
+    </div>
+    <div class="about-col-2">
+     <h1 class="sub" style="font-size: 40px;">About Me</h1>
+     <p class="intro">
+      I'm deeply passionate about web development and thrive in collaborative settings. As a team player, I excel in problem-solving and possess strong technical skills. My expertise lies in crafting seamless web experiences using various languages and frameworks. I'm committed to delivering innovative solutions that drive results.</p>
+      <div class="tab-titles">
+        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+        <p class="tab-links" onclick="opentab('certifications')">Certifications</p>
+        <p class="tab-links" onclick="opentab('education')">Education</p>
+      </div>
+      <div class="tab-contents active-tab" id="skills">
+        <ul>
+          <li><span>UI/UX</span><br>Designing Web/App Interface</li>
+          <li><span>Web Development</span><br>Web app Development</li>
+          <li><span>Technical Languages</span><br>C,C++,JAVA,Python,MYSQL</li>
+        </ul>
+      </div>
+      <div class="tab-contents" id="certifications">
+        <ul>
+          <li><span>UI/UX</span><br>In Great Learning</li>
+          <li><span>Java</span><br>In Udemy</li>
+          <li><span>Data Analysis</span><br>Workshop in Skillnation</li>
+          <li><span>AWS</span><br>Workshop in Yugam-KCT</li>
+        </ul>
+      </div>
+      <div class="tab-contents" id="education">
+        <ul>
+          <li><span>College</span><br>SKCET Coimbatore</li>
+          <li><span>12th Grade</span><br>THE TVS SCHOOL(Matric) Madurai</li>
+          <li><span>10th Grade</span><br>SDA(ICSE) Madurai</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<script>
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  function opentab(tabname)
+  {
+    for(tablink of tablinks){
+      tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+      tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link")
+    document.getElementById(tabname).classList.add("active-tab")
+  }
+</script>
+
+
+<div id="portfolio" style="background-color: black;">
+  <div class="container">
+    <h1 class="sub-title" style="font-size: 40px;">My Work</h1>
+    <div class="work-list">
+      <div class="work">
+        <img  style="height: 350px; width: 550px;" src="images (1).jpg">
+        <div class="layer">
+          <h3 style="font-size: 20px;"><b>Expense calculator</b></h3>
+          <p style="font-size: 15px;">Created a comprehensive expense calculator application allowing users to input and track expenses effortlessly. Integrated features for categorizing expenses, setting budgets, and generating detailed reports for financial analysis. Implemented intuitive user interface design for seamless navigation and usability. </p>
+        </div>
+      </div>
+      <div class="work">
+        <img style="height: 350px; width: 550px;"  src="images.jpg">
+        <div class="layer">
+          <h3 style="font-size: 20px; font-style: bold;"><b>Food Donating Web app</b></h3>
+          <p style="font-size: 15px;">Designed and developed a web application for facilitating food donations, connecting donors with those in need within local communities. Implemented features for donors to list surplus food items and for recipients to request and receive donations based on their requirements. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="contact" style="background-color: black;">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title" style="font-size: 40px;">
+          Contact Me
+        </h1>
+        <p>lathikaraja7@gmail.com</p><br>
+        <div class="social-icon">
+          <a href="https://www.linkedin.com/in/lathika-raja-6a1706258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="text-decoration: none; color: inherit;">linkedin</a>
+        </div>
+        <a href="resume.pdf" download class="btn btn2">Dowload CV</a>   
+      </div>
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email"name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn btn2" style="font-size: 15px;">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxbgNtN9kmuh4QW-ACmzbl1IKEkWvu2X2au7MKRrA9Jd7n-W6vlzejUiTkGKP_8fFQf8w/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response =>{ msg.innerHTML = "Message sent"
+    setTimeout(function(){
+      msg.innerHTML = ""
+    },5000)
+  form.reset()} )
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
